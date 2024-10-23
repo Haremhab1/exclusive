@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMXhG+2T2n0GmUHs7Pf0z3z5IpGZ54g3R5Kn8zO" crossorigin="anonymous">
+    <style>
+        /* Add your CSS styles here */
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .form-input {
+            margin: 10px 0; /* Space between inputs */
+            width: 100%; /* Full width of the container */
+            padding: 10px; /* Inner padding for inputs */
+            border: 1px solid #ccc; /* Border for inputs */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .logo {
+            margin-left: 35%;
+        }
+        /* Existing styles for header */
+        /* ... (same styles as before) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="top-right-icons">
+            <button class="burger-menu"><i class="fas fa-bars"></i></button>
+            <button class="cart-icon"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+    </header>
+
+    <form class="payment-form" id="paymentForm">
+        <input type="text" id="cardholderName" class="form-input" placeholder="Cardholder Name" required>
+        <input type="tel" id="cardNumber" class="form-input" placeholder="Card Number" required>
+        <input type="text" id="expiryDate" class="form-input" placeholder="Expiry Date (MM/YY)" required>
+        <input type="tel" id="cvv" class="form-input" placeholder="CVV" required>
+        <input type="text" id="amount" class="form-input" placeholder="Amount to Pay" required>
+        <button type="submit" class="form-input">Pay Now</button>
+    </form>
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form values
+            const cardholderName = document.getElementById("cardholderName").value;
+            const cardNumber = document.getElementById("cardNumber").value;
+            const expiryDate = document.getElementById("expiryDate").value;
+            const cvv = document.getElementById("cvv").value;
+            const amount = document.getElementById("amount").value;
+
+            // Add validation logic here if needed
+            
+            // Redirect to confirmation page
+            window.location.href = "confirmation.html"; // Change this to your confirmation page URL
+        });
+    </script>
+</body>
+</html>
